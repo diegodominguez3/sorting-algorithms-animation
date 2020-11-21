@@ -1,18 +1,15 @@
 import React from 'react';
-import styled from 'styled-components'
 import Header from './Header'; 
+import SortData from './SortData'; 
+import './App.css'; 
 
-const Container = styled.div`
-        max-width: 1440px; 
-        margin: 0 auto; 
-    `;
 
 class App extends React.Component {
     render () {
         return (
             <React.Fragment>
                 <Header/>
-                <Container>Hello World!</Container>
+                <SortData/>
             </React.Fragment>
         );
     }
