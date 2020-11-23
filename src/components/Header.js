@@ -94,7 +94,7 @@ export default function PersistentDrawerRight() {
         })}
       >
         <Toolbar className={classes.toolBar}>
-          <Avatar src={logo} alt="react-logo" noWrap className={classes.logo}/>
+          <Avatar src={logo} alt="react-logo" className={classes.logo}/>
           <IconButton
             color="inherit"
             aria-label="open drawer"
