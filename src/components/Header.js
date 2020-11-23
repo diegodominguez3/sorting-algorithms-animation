@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
     }),
     marginRight: drawerWidth,
   },
+  toolBar: {
+    justifyContent: 'space-between'
+  }, 
   logo: {
     justifyContent: 'space-between',
   },
@@ -90,7 +93,7 @@ export default function PersistentDrawerRight() {
           [classes.appBarShift]: open,
         })}
       >
-        <Toolbar>
+        <Toolbar className={classes.toolBar}>
           <Avatar src={logo} alt="react-logo" noWrap className={classes.logo}/>
           <IconButton
             color="inherit"
