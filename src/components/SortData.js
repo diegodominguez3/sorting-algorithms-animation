@@ -1,6 +1,7 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
+import DataBar from './DataBar'; 
 
 class SortData extends React.Component {
   constructor(props) {
@@ -35,9 +36,9 @@ class SortData extends React.Component {
 
   renderElements() {
     return (
-      this.state.elements.map((el) => {
+      this.state.elements.map((el, index) => {
         return (
-          <div key={el}><h1>{el}</h1></div>
+          <DataBar key={index} id={index} barValue={el}><h1>{el}</h1></DataBar>
         ); 
       })
     ); 
