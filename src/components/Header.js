@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import clsx from 'clsx';
 import logo from '../assets/react_icon.svg'; 
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -71,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PersistentDrawerRight() {
+function Header(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -83,6 +84,16 @@ export default function PersistentDrawerRight() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  function renderAlgorithms() {
+    return props.algorithms.map((algo) => {
+      return (
+        <ListItem button onClick={() => {handleDrawerClose(); algo.func()}}>
+          <ListItemText>{algo.name}</ListItemText>
+        </ListItem>
+      )
+    });
+  }
 
   return (
     <div className={classes.root}>
@@ -124,11 +135,15 @@ export default function PersistentDrawerRight() {
         </div>
         <Divider />
         <List>
-          <ListItem button onClick={handleDrawerClose}>
-            <ListItemText>Bubble Sort</ListItemText>
-          </ListItem>
+          {renderAlgorithms()}
         </List>
       </Drawer>
     </div>
   );
 }
+
+const mapStateToProps = (state) => { 
+  return state;
+}
+
+export default connect(mapStateToProps)(Header); 
