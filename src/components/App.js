@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './Header'; 
-import SortData from './SortData'; 
+import SortDataBody from './SortDataBody'; 
 import './App.css'; 
 
 
@@ -9,7 +9,7 @@ class App extends React.Component {
         return (
             <React.Fragment>
                 <Header/>
-                <SortData/>
+                <SortDataBody/>
             </React.Fragment>
         );
     }

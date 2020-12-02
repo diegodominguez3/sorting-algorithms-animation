@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import {selectAlgorithm} from '../actions'; 
 import clsx from 'clsx';
 import logo from '../assets/react_icon.svg'; 
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -86,9 +87,9 @@ function Header(props) {
   };
 
   function renderAlgorithms() {
-    return props.algorithms.map((algo) => {
+    return props.algorithms.map((algo, index) => {
       return (
-        <ListItem button onClick={() => {handleDrawerClose(); algo.func()}}>
+        <ListItem key={index} id={index} button onClick={() => {handleDrawerClose(); props.selectAlgorithm(algo)}}>
           <ListItemText>{algo.name}</ListItemText>
         </ListItem>
       )
@@ -142,8 +143,9 @@ function Header(props) {
   );
 }
 
-const mapStateToProps = (state) => { 
+const mapStateToProps = (state) => {  
+  console.log(state); 
   return state;
 }
 
-export default connect(mapStateToProps)(Header); 
+export default connect(mapStateToProps, { selectAlgorithm })(Header); 

@@ -10,7 +10,7 @@ class DataBar extends React.Component {
     `;
         return (
             <Bar>
-                <h1>{this.props.barValue}</h1>        
+                <h1 style={{paddingLeft: '10px'}}>{this.props.barValue}</h1>        
             </Bar>
         ); 
     }
