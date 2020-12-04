@@ -27,6 +27,9 @@ const currentDataReducer = (currentData=INITIAL_DATA, action) => {
     if(action.type === 'CURRENT_DATA_GENERATED') {
         return action.payload;
     }
+    if(action.type === 'UPDATE_DATA') {
+        return {...currentData, array: action.payload}; 
+    }
     return currentData; 
 };
 

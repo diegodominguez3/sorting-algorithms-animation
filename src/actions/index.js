@@ -34,7 +34,13 @@ export const generateCurrentData = (data, minVal, maxVal, size) => {
     }
 }
 
-export const updateData = (newData) => {
-    
-    
+export const updateData = (data) => {
+    let newArray = new Array(data.array.length); 
+    for(let i = 0; i < data.array.length; i++) {
+        newArray[i] = data.array[i] * 2; 
+    }
+    return {
+        type:'UPDATE_DATA', 
+        payload: newArray
+    }
 }

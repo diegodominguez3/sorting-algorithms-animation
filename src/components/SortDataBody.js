@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'; 
-import { generateCurrentData } from '../actions'; 
+import { generateCurrentData, updateData } from '../actions'; 
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
@@ -43,7 +43,7 @@ class SortDataBody extends React.Component {
         <CssBaseline />
         <Container maxWidth="lg" style={{marginTop: '75px'}}>
         <Typography variant="h3" className={useStyles.root}>{this.props.algorithm.name}</Typography>
-          <button>sort</button>
+          <button onClick={() => this.props.updateData(this.props.data)}>sort</button>
           {this.renderElements()}
         </Container>
       </React.Fragment>
@@ -59,4 +59,4 @@ const mapStateToProps = (state) => {
   };
 }; 
 
-export default connect(mapStateToProps, {generateCurrentData})(SortDataBody);
+export default connect(mapStateToProps, {generateCurrentData, updateData})(SortDataBody);
