@@ -1,8 +1,15 @@
-import {combineReducers} from 'redux'; 
+import { combineReducers } from 'redux'; 
+import { bubbleSort } from '../algorithms/bubbleSort'; 
+
+const INITIAL_DATA = {
+    array: [], 
+    isSorted: false, 
+    currentCount: 0
+};
 
 const algorithmsReducer = () => {
     return [
-        {name: 'Bubble Sort', func: () => {console.log('bubble sort')}},
+        {name: 'Bubble Sort', func: () => {bubbleSort([])}},
         {name: 'Quick Sort', func: () => {console.log('quick sort')}},
         {name: 'Heap Sort', func: () => {console.log('heap sort')}}
     ]  
@@ -16,7 +23,7 @@ const dataInfoReducer = () => {
     }
 }
 
-const currentDataReducer = (currentData=[], action) => {
+const currentDataReducer = (currentData=INITIAL_DATA, action) => {
     if(action.type === 'CURRENT_DATA_GENERATED') {
         return action.payload;
     }

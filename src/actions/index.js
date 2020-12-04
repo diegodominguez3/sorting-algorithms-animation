@@ -23,10 +23,14 @@ function populateElementsList (minValue, maxValue, elementsSize) {
 }
 
 export const generateCurrentData = (data, minVal, maxVal, size) => {
-    data = [...populateElementsList(minVal, maxVal, size)]; 
+    data = {
+        array: [...populateElementsList(minVal, maxVal, size)],
+        isSorted: false, 
+        currentCount: 0
+    }; 
     return {
         type: 'CURRENT_DATA_GENERATED',
         payload: data
     }
-}
+} 
 

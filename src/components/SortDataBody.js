@@ -23,13 +23,13 @@ class SortDataBody extends React.Component {
   }
 
   componentDidMount() {
-    this.props.generateCurrentData(this.props.currentData, this.props.dataInfo.minValue, 
+    this.props.generateCurrentData(this.props.data.array, this.props.dataInfo.minValue, 
       this.props.dataInfo.maxValue, this.props.dataInfo.elementsSize); 
   }
 
   renderElements() {
     return (
-      this.props.data.map((el, index) => {
+      this.props.data.array.map((el, index) => {
         return (
           <DataBar key={index} id={index} barValue={el}><h1>{el}</h1></DataBar>
         ); 
@@ -43,6 +43,7 @@ class SortDataBody extends React.Component {
         <CssBaseline />
         <Container maxWidth="lg" style={{marginTop: '75px'}}>
         <Typography variant="h3" className={useStyles.root}>{this.props.algorithm.name}</Typography>
+          <button>sort</button>
           {this.renderElements()}
         </Container>
       </React.Fragment>
