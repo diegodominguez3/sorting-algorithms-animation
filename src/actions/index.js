@@ -1,4 +1,4 @@
-//Action creator
+import { bubbleSort } from '../algorithms/bubbleSort'; 
 // select sorting algorithm
 export const selectAlgorithm = algorithm => {
     //return an action 
@@ -32,5 +32,12 @@ export const generateCurrentData = (data, minVal, maxVal, size) => {
         type: 'CURRENT_DATA_GENERATED',
         payload: data
     }
-} 
+}
 
+export const updateData = (dispatch, getState) => {
+    dispatch(
+        {
+            type: 'UPDATE_DATA'
+        }
+    ); 
+}
