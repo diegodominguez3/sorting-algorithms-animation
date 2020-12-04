@@ -34,10 +34,7 @@ export const generateCurrentData = (data, minVal, maxVal, size) => {
     }
 }
 
-export const updateData = (dispatch, getState) => {
-    dispatch(
-        {
-            type: 'UPDATE_DATA'
-        }
-    ); 
+export const updateData = (newData) => {
+    
+    
 }
