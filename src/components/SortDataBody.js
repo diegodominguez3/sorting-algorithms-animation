@@ -36,7 +36,7 @@ class SortDataBody extends React.Component {
   delaySort() {
     setTimeout(() => {
       this.props.updateData(this.props.data);
-    }, 500);
+    }, 300);
 }
 
   renderElements() {
