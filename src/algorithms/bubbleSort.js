@@ -6,7 +6,7 @@ function swap(index1, index2, array) {
 }
 
 export const bubbleSort = (array, isSorted, count) => {
-      while(!isSorted) {
+      if(!isSorted) {
           isSorted = true; 
           for (let i = 0; i < array.length - 1 - count; i ++) {
               if (array[i] > array[i+1]) {
@@ -16,6 +16,7 @@ export const bubbleSort = (array, isSorted, count) => {
           }
           count ++; 
       }
-      return array; 
+      console.log(count); 
+      return {array, isSorted, currentCount: count} 
   }
   

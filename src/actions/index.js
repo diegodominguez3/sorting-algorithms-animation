@@ -35,12 +35,9 @@ export const generateCurrentData = (data, minVal, maxVal, size) => {
 }
 
 export const updateData = (data) => {
-    let newArray = new Array(data.array.length); 
-    for(let i = 0; i < data.array.length; i++) {
-        newArray[i] = data.array[i] * 2; 
-    }
+    let newData = {...data}; 
     return {
         type:'UPDATE_DATA', 
-        payload: newArray
+        payload: bubbleSort(newData.array, newData.isSorted, newData.currentCount)
     }
 }

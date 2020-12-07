@@ -28,7 +28,7 @@ const currentDataReducer = (currentData=INITIAL_DATA, action) => {
         return action.payload;
     }
     if(action.type === 'UPDATE_DATA') {
-        return {...currentData, array: action.payload}; 
+        return action.payload;
     }
     return currentData; 
 };

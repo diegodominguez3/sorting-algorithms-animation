@@ -27,6 +27,18 @@ class SortDataBody extends React.Component {
       this.props.dataInfo.maxValue, this.props.dataInfo.elementsSize); 
   }
 
+  componentDidUpdate() {
+    if(this.props.data.isSorted === false && this.props.data.currentCount > 0) {
+      this.delaySort(); 
+    }
+  }
+
+  delaySort() {
+    setTimeout(() => {
+      this.props.updateData(this.props.data);
+    }, 500);
+}
+
   renderElements() {
     return (
       this.props.data.array.map((el, index) => {
