@@ -44,8 +44,7 @@ class SortDataBody extends React.Component {
     return (
       this.props.data.array.map((el, index) => {
         return (
-          <DataBar key={index} id={index} barValue={el} 
-          isCurrent= {index === this.props.data.currentIndex}>
+          <DataBar key={index} id={index} barValue={el} >
             <h1>{el}</h1>
           </DataBar>
         ); 

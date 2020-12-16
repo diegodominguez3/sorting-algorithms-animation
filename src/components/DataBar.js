@@ -6,7 +6,7 @@ class DataBar extends React.Component {
     const Bar = styled.div`
         height: 30px; 
         width: ${this.props.barValue}%;
-        background: ${this.props.isCurrent ? 'red' : '#14A9C1'};
+        background: #14A9C1;
     `;
         return (
             <Bar>
