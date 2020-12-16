@@ -1,3 +1,4 @@
+import store from "../store"
 //swap function
 function swap(index1, index2, array) {
     const temp = array[index1];
@@ -8,7 +9,7 @@ function swap(index1, index2, array) {
 export const bubbleSort = (data) => {
     let array = data.array; 
     let isSorted = data.isSorted; 
-    let count = data.currentCount; 
+    let count = data.currentCount;
     if (!isSorted) {
         isSorted = true;
         for (let i = 0; i < array.length - 1 - count; i++) {
@@ -18,11 +19,6 @@ export const bubbleSort = (data) => {
             }
         }
         count++;
-    }
-    console.log(count);
-    return {
-        array,
-        isSorted,
-        currentCount: count
-    }
-}
+    } 
+    return {...data, array, isSorted, currentCount: count}
+} 

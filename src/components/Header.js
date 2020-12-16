@@ -149,7 +149,6 @@ function Header(props) {
 }
 
 const mapStateToProps = (state) => {  
-  console.log(state); 
   return state;
 }
 

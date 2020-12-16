@@ -44,7 +44,10 @@ class SortDataBody extends React.Component {
     return (
       this.props.data.array.map((el, index) => {
         return (
-          <DataBar key={index} id={index} barValue={el}><h1>{el}</h1></DataBar>
+          <DataBar key={index} id={index} barValue={el} 
+          isCurrent= {index === this.props.data.currentIndex}>
+            <h1>{el}</h1>
+          </DataBar>
         ); 
       })
     );
@@ -55,7 +58,7 @@ class SortDataBody extends React.Component {
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth="lg" style={{marginTop: '75px'}}>
-          <Typography variant="h3" className={useStyles.root}>{this.props.algorithm.name}</Typography>
+          <Typography variant="h4" className={useStyles.root}>{this.props.algorithm.name}</Typography>
           <Button variant="contained" color="primary" style={{marginTop: '20px'}}
             onClick={() => this.props.updateData(this.props.data, this.props.algorithm.name)}>
             Sort!

@@ -26,7 +26,8 @@ function populateElementsList (minValue, maxValue, elementsSize) {
 export const generateCurrentData = (data, minVal, maxVal, size) => {
     data = {
         array: [...populateElementsList(minVal, maxVal, size)],
-        isSorted: false, 
+        isSorted: false,
+        currentIndex: 0,
         currentCount: 0
     }; 
     return {

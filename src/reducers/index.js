@@ -3,7 +3,8 @@ import { bubbleSort } from '../algorithms/bubbleSort';
 
 const INITIAL_DATA = {
     array: [], 
-    isSorted: false, 
+    isSorted: false,
+    currentIndex: 0,
     currentCount: 0
 };
 
@@ -40,7 +41,6 @@ const selectedAlgorithmReducer = (selectedAlgorithm=algorithmsReducer()[0], acti
 
     return selectedAlgorithm; 
 }
-
 
 export default combineReducers({
     dataInfo: dataInfoReducer, 
