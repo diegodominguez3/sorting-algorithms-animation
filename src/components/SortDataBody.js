@@ -6,6 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
 import DataBar from './DataBar';
 import Typography from '@material-ui/core/Typography'; 
+import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles'; 
 
 const useStyles = makeStyles({
@@ -54,8 +55,11 @@ class SortDataBody extends React.Component {
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth="lg" style={{marginTop: '75px'}}>
-        <Typography variant="h3" className={useStyles.root}>{this.props.algorithm.name}</Typography>
-          <button onClick={() => this.props.updateData(this.props.data)}>sort</button>
+          <Typography variant="h3" className={useStyles.root}>{this.props.algorithm.name}</Typography>
+          <Button variant="contained" color="primary" style={{marginTop: '20px'}}
+            onClick={() => this.props.updateData(this.props.data, this.props.algorithm.name)}>
+            Sort!
+          </Button>
           {this.renderElements()}
         </Container>
       </React.Fragment>

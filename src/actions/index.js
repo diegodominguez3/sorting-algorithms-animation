@@ -1,4 +1,5 @@
 import { bubbleSort } from '../algorithms/bubbleSort'; 
+import { quickSort } from '../algorithms/quickSort'; 
 // select sorting algorithm
 export const selectAlgorithm = algorithm => {
     //return an action 
@@ -34,10 +35,22 @@ export const generateCurrentData = (data, minVal, maxVal, size) => {
     }
 }
 
-export const updateData = (data) => {
+export const updateData = (data, algorithm) => {
     let newData = {...data}; 
+    let updateFunction = null;
+
+    switch(algorithm) {
+        case "Bubble Sort":
+            updateFunction = bubbleSort(newData); 
+            break;
+        case "Quick Sort":
+            updateFunction = quickSort(newData);
+            break; 
+        default:
+            updateFunction = bubbleSort(newData); 
+    }
     return {
-        type:'UPDATE_DATA', 
-        payload: bubbleSort(newData.array, newData.isSorted, newData.currentCount)
+        type:'UPDATE_DATA',
+        payload: updateFunction
     }
 }

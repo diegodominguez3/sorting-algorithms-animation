@@ -30,7 +30,7 @@ const currentDataReducer = (currentData=INITIAL_DATA, action) => {
     if(action.type === 'UPDATE_DATA') {
         return action.payload;
     }
-    return currentData; 
+    return currentData;
 };
 
 const selectedAlgorithmReducer = (selectedAlgorithm=algorithmsReducer()[0], action) => {
